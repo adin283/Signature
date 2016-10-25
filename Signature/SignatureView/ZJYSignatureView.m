@@ -14,6 +14,8 @@
 @property (strong, nonatomic) UIImage *incrImage;
 @property (assign, nonatomic) NSInteger control;
 @property (strong, nonatomic) NSMutableArray *points;
+@property (assign, nonatomic) CGPoint topLeftPoint;
+@property (assign, nonatomic) CGPoint bottomRightPoint;
 
 @end
 
@@ -52,6 +54,9 @@
     [self.beizerPath setLineWidth:2.0];
     [self setMultipleTouchEnabled:NO];
     self.points = [NSMutableArray arrayWithCapacity:5];
+    
+    self.topLeftPoint = CGPointMake(self.bounds.size.width, self.bounds.size.height);
+    self.bottomRightPoint = CGPointZero;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -76,6 +81,9 @@
     UITouch *touch = [touches anyObject];
     self.points[0] = [NSValue valueWithCGPoint:[touch locationInView:self]];
     
+    [self storeTopLeftPoint:[self.points[0] CGPointValue]];
+    [self storeBottomRightPoint:[self.points[0] CGPointValue]];
+    
     CGPoint startPoint = [self.points[0] CGPointValue];
     CGPoint endPoint = CGPointMake(startPoint.x + 1.5, startPoint.y + 2);
     
@@ -88,6 +96,10 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:self];
+    
+    [self storeTopLeftPoint:touchPoint];
+    [self storeBottomRightPoint:touchPoint];
+    
     self.control++;
     self.points[self.control] = [NSValue valueWithCGPoint:touchPoint];
     
@@ -112,6 +124,7 @@
     [self setNeedsDisplay];
     [self.beizerPath removeAllPoints];
     self.control = 0;
+    NSLog(@"topleft:%@, bottomRight:%@", NSStringFromCGPoint(self.topLeftPoint), NSStringFromCGPoint(self.bottomRightPoint));
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -150,15 +163,38 @@
     
     UIImage *signatureImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return signatureImage;
+    
+    CGRect sizeInPoint = [self getImageRect];
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGRect rectInPixel = CGRectMake(sizeInPoint.origin.x * scale, sizeInPoint.origin.y * scale, sizeInPoint.size.width * 2, sizeInPoint.size.height * 2);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([signatureImage CGImage], rectInPixel);
+    UIImage *cropImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    return cropImage;
 }
 
 - (void)clearSignature
 {
     self.incrImage = nil;
+    [self configure];
     [self setNeedsDisplay];
 }
 
+- (void)storeTopLeftPoint:(CGPoint)point
+{
+    self.topLeftPoint = CGPointMake(fmin(self.topLeftPoint.x, point.x), fmin(self.topLeftPoint.y, point.y));
+}
 
+- (void)storeBottomRightPoint:(CGPoint)point
+{
+    self.bottomRightPoint = CGPointMake(fmax(self.bottomRightPoint.x, point.x), fmax(self.bottomRightPoint.y, point.y));
+}
+
+- (CGRect)getImageRect
+{
+    CGSize size = CGSizeMake(self.bottomRightPoint.x - self.topLeftPoint.x, self.bottomRightPoint.y - self.topLeftPoint.y);
+    return CGRectMake(self.topLeftPoint.x, self.topLeftPoint.y, size.width, size.height);
+}
 
 @end
