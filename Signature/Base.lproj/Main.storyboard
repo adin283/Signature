@@ -1,14 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eqS-zQ-ifX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="0w4-i2-wbg">
+            <objects>
+                <navigationController id="eqS-zQ-ifX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z4w-XQ-4y3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dMn-xt-7VJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFb-fk-Sf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1438" y="-150"/>
+        </scene>
+        <!--Signature-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Signature" id="BYZ-38-t0r" customClass="SignatureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +33,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-if-I31" customClass="ZJYSignatureView">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="972-3h-dK8">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="972-3h-dK8" firstAttribute="leading" secondItem="hE1-if-I31" secondAttribute="leading" id="Lmi-Mq-TO9"/>
+                                    <constraint firstAttribute="bottom" secondItem="972-3h-dK8" secondAttribute="bottom" id="bPy-85-2cF"/>
+                                    <constraint firstAttribute="trailing" secondItem="972-3h-dK8" secondAttribute="trailing" id="cUE-Us-crE"/>
+                                    <constraint firstItem="972-3h-dK8" firstAttribute="top" secondItem="hE1-if-I31" secondAttribute="top" id="ddu-a0-8gV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="signatureLabel" destination="972-3h-dK8" id="BJg-KI-Fah"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hE1-if-I31" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iyg-ba-nJh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hE1-if-I31" secondAttribute="bottom" id="Oi7-ER-ZPd"/>
+                            <constraint firstItem="hE1-if-I31" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QNf-3r-nS7"/>
+                            <constraint firstAttribute="trailing" secondItem="hE1-if-I31" secondAttribute="trailing" id="Vvz-Og-g2J"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Signature" id="LeO-jd-mQF">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="HCG-hh-u4u">
+                            <connections>
+                                <action selector="clearButtonPressed:" destination="BYZ-38-t0r" id="iwN-fI-S8k"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Image" id="vHE-jD-2bp">
+                            <connections>
+                                <segue destination="a9b-l5-P4b" kind="show" identifier="ImageSignatureSegue" id="IT3-wr-Rnt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="signatureView" destination="hE1-if-I31" id="xkV-Mr-mXD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-494" y="-151"/>
+        </scene>
+        <!--Signature Image-->
+        <scene sceneID="Zpz-uD-Ibv">
+            <objects>
+                <viewController title="Signature Image" id="a9b-l5-P4b" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="woS-p0-wWZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tP3-4A-scU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bla-xy-39k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-Xf-kEx">
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Goq-Xf-kEx" firstAttribute="leading" secondItem="Bla-xy-39k" secondAttribute="leading" id="SEX-NU-5lQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Goq-Xf-kEx" secondAttribute="trailing" id="a2l-2l-Hh0"/>
+                            <constraint firstItem="Goq-Xf-kEx" firstAttribute="top" secondItem="woS-p0-wWZ" secondAttribute="bottom" id="eEB-Xl-x4V"/>
+                            <constraint firstItem="tP3-4A-scU" firstAttribute="top" secondItem="Goq-Xf-kEx" secondAttribute="bottom" id="hNU-CC-d5g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="signatureImageView" destination="Goq-Xf-kEx" id="WEE-x0-B8K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysS-WM-WUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="-152"/>
         </scene>
     </scenes>
 </document>

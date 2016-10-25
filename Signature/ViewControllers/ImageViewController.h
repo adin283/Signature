@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ImageViewController.h
 //  Signature
 //
 //  Created by Kevin on 2016/10/25.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ImageViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *signatureImage;
 
 @end
-

@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		DF5B83F61DBEEFBB00A6FCC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B83F51DBEEFBB00A6FCC4 /* main.m */; };
 		DF5B83F91DBEEFBB00A6FCC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B83F81DBEEFBB00A6FCC4 /* AppDelegate.m */; };
-		DF5B83FC1DBEEFBB00A6FCC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B83FB1DBEEFBB00A6FCC4 /* ViewController.m */; };
 		DF5B83FF1DBEEFBB00A6FCC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5B83FD1DBEEFBB00A6FCC4 /* Main.storyboard */; };
 		DF5B84011DBEEFBB00A6FCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5B84001DBEEFBB00A6FCC4 /* Assets.xcassets */; };
 		DF5B84041DBEEFBB00A6FCC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5B84021DBEEFBB00A6FCC4 /* LaunchScreen.storyboard */; };
 		DF5B840F1DBEEFBB00A6FCC4 /* SignatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B840E1DBEEFBB00A6FCC4 /* SignatureTests.m */; };
 		DF5B841A1DBEEFBB00A6FCC4 /* SignatureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B84191DBEEFBB00A6FCC4 /* SignatureUITests.m */; };
+		DF5B84361DBF451E00A6FCC4 /* ZJYSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B84301DBF451E00A6FCC4 /* ZJYSignatureView.m */; };
+		DF5B84371DBF451E00A6FCC4 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B84331DBF451E00A6FCC4 /* ImageViewController.m */; };
+		DF5B84381DBF451E00A6FCC4 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B84351DBF451E00A6FCC4 /* SignatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,6 @@
 		DF5B83F51DBEEFBB00A6FCC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF5B83F71DBEEFBB00A6FCC4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DF5B83F81DBEEFBB00A6FCC4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DF5B83FA1DBEEFBB00A6FCC4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DF5B83FB1DBEEFBB00A6FCC4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DF5B83FE1DBEEFBB00A6FCC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF5B84001DBEEFBB00A6FCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF5B84031DBEEFBB00A6FCC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,12 @@
 		DF5B84151DBEEFBB00A6FCC4 /* SignatureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignatureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5B84191DBEEFBB00A6FCC4 /* SignatureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignatureUITests.m; sourceTree = "<group>"; };
 		DF5B841B1DBEEFBB00A6FCC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5B842F1DBF451E00A6FCC4 /* ZJYSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJYSignatureView.h; sourceTree = "<group>"; };
+		DF5B84301DBF451E00A6FCC4 /* ZJYSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJYSignatureView.m; sourceTree = "<group>"; };
+		DF5B84321DBF451E00A6FCC4 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		DF5B84331DBF451E00A6FCC4 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		DF5B84341DBF451E00A6FCC4 /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
+		DF5B84351DBF451E00A6FCC4 /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +107,10 @@
 		DF5B83F31DBEEFBB00A6FCC4 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
-				DF5B83F71DBEEFBB00A6FCC4 /* AppDelegate.h */,
-				DF5B83F81DBEEFBB00A6FCC4 /* AppDelegate.m */,
-				DF5B83FA1DBEEFBB00A6FCC4 /* ViewController.h */,
-				DF5B83FB1DBEEFBB00A6FCC4 /* ViewController.m */,
-				DF5B83FD1DBEEFBB00A6FCC4 /* Main.storyboard */,
+				DF5B842E1DBF451E00A6FCC4 /* SignatureView */,
+				DF5B84311DBF451E00A6FCC4 /* ViewControllers */,
+				DF5B842D1DBF450E00A6FCC4 /* Storyboard */,
 				DF5B84001DBEEFBB00A6FCC4 /* Assets.xcassets */,
-				DF5B84021DBEEFBB00A6FCC4 /* LaunchScreen.storyboard */,
-				DF5B84051DBEEFBB00A6FCC4 /* Info.plist */,
 				DF5B83F41DBEEFBB00A6FCC4 /* Supporting Files */,
 			);
 			path = Signature;
@@ -117,6 +119,9 @@
 		DF5B83F41DBEEFBB00A6FCC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF5B83F71DBEEFBB00A6FCC4 /* AppDelegate.h */,
+				DF5B83F81DBEEFBB00A6FCC4 /* AppDelegate.m */,
+				DF5B84051DBEEFBB00A6FCC4 /* Info.plist */,
 				DF5B83F51DBEEFBB00A6FCC4 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +143,35 @@
 				DF5B841B1DBEEFBB00A6FCC4 /* Info.plist */,
 			);
 			path = SignatureUITests;
+			sourceTree = "<group>";
+		};
+		DF5B842D1DBF450E00A6FCC4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DF5B83FD1DBEEFBB00A6FCC4 /* Main.storyboard */,
+				DF5B84021DBEEFBB00A6FCC4 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		DF5B842E1DBF451E00A6FCC4 /* SignatureView */ = {
+			isa = PBXGroup;
+			children = (
+				DF5B842F1DBF451E00A6FCC4 /* ZJYSignatureView.h */,
+				DF5B84301DBF451E00A6FCC4 /* ZJYSignatureView.m */,
+			);
+			path = SignatureView;
+			sourceTree = "<group>";
+		};
+		DF5B84311DBF451E00A6FCC4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF5B84341DBF451E00A6FCC4 /* SignatureViewController.h */,
+				DF5B84351DBF451E00A6FCC4 /* SignatureViewController.m */,
+				DF5B84321DBF451E00A6FCC4 /* ImageViewController.h */,
+				DF5B84331DBF451E00A6FCC4 /* ImageViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5B83FC1DBEEFBB00A6FCC4 /* ViewController.m in Sources */,
 				DF5B83F91DBEEFBB00A6FCC4 /* AppDelegate.m in Sources */,
+				DF5B84361DBF451E00A6FCC4 /* ZJYSignatureView.m in Sources */,
+				DF5B84371DBF451E00A6FCC4 /* ImageViewController.m in Sources */,
 				DF5B83F61DBEEFBB00A6FCC4 /* main.m in Sources */,
+				DF5B84381DBF451E00A6FCC4 /* SignatureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G8WC3SG7;
 				INFOPLIST_FILE = Signature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KevinLab.Signature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,6 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G8WC3SG7;
 				INFOPLIST_FILE = Signature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KevinLab.Signature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
